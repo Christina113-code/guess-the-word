@@ -1,28 +1,32 @@
-.invisible{
-    color:white;
-    background-color: white;
-    
+.hangman-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
 }
 .letter{
     border-bottom:2px solid black;
-    padding:10px;
+    padding:1rem;
     margin:10px;   
+    font-size:2rem;
 }
 .word-container{
     display: flex;
     flex-direction: row;
+    padding:2rem;
+    align-items: center;
+    justify-content: center;
+    
 }
-.incorrect-btn{
-background:red;
-}
-.correct-btn{
-    background:green;
-}
+
 .btn-container{
     display: flex;
     flex-direction:row;
     flex-wrap:wrap;
     width:70%;
+    padding:10px;
+    max-width:750px;
 }
 .btn{
     background-color: aliceblue;
@@ -31,8 +35,28 @@ background:red;
     padding:1rem;
     cursor:pointer;
     transition: all .5s ease-in-out;
+    margin:10px;
+    border-radius:50%;
+    width:auto;
 }
 .btn:hover{
     background-color: rgb(163, 169, 174);
     transition: all .5s ease-in-out;
+}
+.crossed{
+    text-decoration: line-through;
+    background-color:blue;
+    color:white;
+}
+.lost{
+    color:red;
+}
+.won{
+color:green
+}
+.play-again{
+    padding:.8rem;
+    border-radius:5px;
+    border:none;
+    background-color: aliceblue;
 }
