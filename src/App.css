@@ -57,6 +57,14 @@ color:green
 .play-again{
     padding:.8rem;
     border-radius:5px;
-    border:none;
+    border:1px solid blue;
     background-color: aliceblue;
+    cursor:pointer;
+    transition:all .5s ease-in-out;
+
+}
+.play-again:hover{
+    background-color: rgb(183, 212, 237);
+    transition:all .5s ease-in-out;
+
 }

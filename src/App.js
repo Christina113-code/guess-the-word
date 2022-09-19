@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
-import img1 from './imgs/1.png';
 const words = ["bobert", "jimothy", "bob", "jim"];
 const word = words[Math.floor(Math.random() * words.length)];
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
-const imgs = []
+
 function App() {
   const [tries, setTries] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState([]);
@@ -19,6 +18,12 @@ function App() {
     setUsedLetters([...usedLetters, letter]);
   };
 
+  const handlePlayAgain =()=>{
+    setTries(0);
+    setCorrectAnswers([]);
+    setUsedLetters([]);
+  }
+
   const word_arr = word
     .split("")
     .map((char, i) => (
@@ -28,7 +33,6 @@ function App() {
   return (
     <>
       <div className="hangman-container">
-        <p>{word}</p>
         
         {tries > 7
             ? <>
@@ -41,12 +45,12 @@ function App() {
                 .every((element) => correctAnswers.includes(element))
             ? <>
             <h1 className="won">You Won!</h1>
-            <button type="submit">Play Again?</button>
+            <button className = "play-again"onClick={handlePlayAgain}>Play Again?</button>
             </>
             : <h1>Guess the word!</h1>}
         
 
-         {/* <img src={require(img1)} alt="hangman"/> */}
+
         <div className="word-container">{word_arr}</div>
         <div className="btn-container">
           {alphabet.split("").map((char) => (
